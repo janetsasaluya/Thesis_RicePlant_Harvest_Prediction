@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="./favicon.ico">
 	<link rel="stylesheet" href="./assets/style.css">
-	<title>RiceField Prediction</title>
+	<title>RicePlant Prediction</title>
 </head>
 <body>
 	
@@ -16,7 +16,7 @@
 
 			<!-- Header -->
 			<div>
-				<h1 class="text-center" >RiceField Harvest Prediction</h1>
+				<h1 class="text-center" >RicePlant Harvest Prediction</h1>
 				<p>This is a simple prototype wherein you can upload a healthy rice plant picture that you wanted to know its age and whether when will it be harvested. By clicking the box and selecting the rice plant picture you want to upload, it will result into the month age of the rice plant and will show the predicted harvest period.</p>
 			</div>
 
