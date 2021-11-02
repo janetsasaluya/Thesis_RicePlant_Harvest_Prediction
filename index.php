@@ -16,12 +16,18 @@
 
 			<!-- Header -->
 			<div>
+				<div>
+					<h5>NOTE: STRICTLY UPLOAD RICE PLANT IMAGES ONLY!!!</h5>
+				</div>
+				<div>
+					<a class="mr-1" href="help.php">HOW TO IDENTIFY MONTH</a>
+				</div>
 				<h1 class="text-center" >RicePlant Harvest Prediction</h1>
 				<p>This is a simple prototype wherein you can upload a healthy rice plant picture that you wanted to know its age and whether when will it be harvested. By clicking the box and selecting the rice plant picture you want to upload, it will result into the month age of the rice plant and will show the predicted harvest period.</p>
 			</div>
 
 			<!-- Main form -->
-			<form>
+			<form id="upload-form" >
 				<label for="picture-upload" id="picture-preview">
 					<div id='picture-loader-parent' >
 						<div id="picture-loader" >
@@ -30,18 +36,23 @@
 					</div>
 					<div id="picture-preview-label" class="text-center" >
 						<img id="picture-preview-icon" src="assets/plant-cycle/Month-1.svg" />
-						<div>UPLOAD RICEFIELD PICTURE</div>
+						<div class="text-bold" >UPLOAD TRIPLE 2 RICEPLANT ONLY</div>
+						<div></div>
 					</div>
 					<img id="picture-preview-holder" src="" />
 				</label>
-				<input id="picture-upload" type="file" style="display: none;" >
+				<input id="picture-upload" type="file" name="rice_image" style="display: none;" >
+				<div id="permission-card" >
+					<div class="mr-1" ><input id="allow-upload" type="checkbox" name=""></div>
+					<label for="allow-upload" >By checking this box, you're allowing us to store your image, your image will be added to our dataset that will be use for improving our machine learning model.</label>
+				</div>
 			</form>
 
 			<!-- Result view -->
 			<div id="result-panel" >
 				<div class="text-center" >
-					<h2 id="result-panel-header" ></h2>
-					<p id="result-panel-body" ></p>
+					<h2 id="result-panel-header" >2nd Month</h2>
+					<p id="result-panel-body" >Estimated Harvest is on December 2021</p>
 				</div>
 				<div class="icon-set mt-2" >
 					<div data-month="1" class="exact-month icons" ><img style="width: 3rem;" src="assets/plant-cycle/Month-1.svg" /></div>
@@ -49,18 +60,26 @@
 					<div data-month="3" class="exact-month icons" ><img style="width: 6rem;" src="assets/plant-cycle/Month-3.svg" /></div>
 					<div data-month="4" class="exact-month icons" ><img style="width: 8rem;" src="assets/plant-cycle/Month-4.svg" /></div>
 				</div>
+				<div class="text-center mt-2" >
+					<p class="text-bold color-primary" >Accuracy <span id="result-accuracy" ></span>%</p>
+					<p class="color-gray" >Number of Dataset used 2000+ riceplant images</p>
+				</div>
 			</div>
 
 			<div class="text-center color-gray" >Brought to you by <span class="color-primary text-bold" >BSCS 4</span></div>
 		</main>
 	</div>
 	
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 	<script>
 
 		(function(){
 
 			// Configurations
+			var IS_UPLOAD_IMAGE = false;
+			// var UPLOAD_IMAGE_LINK = "http://localhost/AI-image-saver/index.php";
+			var UPLOAD_IMAGE_LINK = "https://visionary-commander.000webhostapp.com/index.php";
 			var DEBUG = true;
 			var PREDICT_DELAY = 1000;
 			var IMAGE_SIZE = 256;
@@ -77,6 +96,14 @@
 			var resultPanelMnts = document.querySelectorAll("#result-panel .exact-month");
 			var resultPanelHeader	= document.querySelector("#result-panel-header");
 			var resultPanelBody		= document.querySelector("#result-panel-body");
+			var resultAccuracy 	= document.querySelector("#result-accuracy");
+			var uploadForm		= document.querySelector("#upload-form");
+			var uploadCheckBox	= document.querySelector("#allow-upload");
+
+			IS_UPLOAD_IMAGE = uploadCheckBox.checked;
+			uploadCheckBox.addEventListener("change", function(){
+				IS_UPLOAD_IMAGE = this.checked;
+			});
 
 			// Load the model and prepare the labels
 			var model;
@@ -145,6 +172,27 @@
 					resultPanel.style.display 	= "block";
 					pictureLoader.style.display = "none";
 					__modelDebug("DOM: Feedback generated");
+
+					if( IS_UPLOAD_IMAGE ){
+
+						var formData = new FormData(uploadForm);
+							formData.append("label", firstResult.className);
+						axios({
+							url:  UPLOAD_IMAGE_LINK,
+							method: "POST",
+							data: formData,
+							headers: { 'Content-Type': 'multipart/form-data' }
+						}).then(data => {
+							if( data.data.success ){
+								console.log("Image: Uploaded");
+							}
+						}).catch(err => {
+							console.log(err);
+						});
+
+					}else{
+						console.log("Upload is not permitted.");
+					}
 				}
 
 				/**
@@ -166,6 +214,8 @@
 
 					__modelDebug("Prediction Finished");
 					__modelDebug(`Result ${ returning_result[0].className }`);
+
+					resultAccuracy.innerHTML = (returning_result[0].probability * 100).toFixed(2);
 					
 					return returning_result;
 				}
