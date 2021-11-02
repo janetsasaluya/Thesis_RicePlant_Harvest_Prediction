@@ -17,7 +17,7 @@
 			<!-- Header -->
 			<div>
 				<div>
-					<h5>NOTE: STRICTLY UPLOAD RICE PLANT IMAGES ONLY!!!</h5>
+					<h4>NOTE: STRICTLY UPLOAD RICE PLANT IMAGES ONLY!!!</h4>
 				</div>
 				<div>
 					<a class="mr-1" href="help.php">HOW TO IDENTIFY MONTH</a>
