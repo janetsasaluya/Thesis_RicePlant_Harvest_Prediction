@@ -5,26 +5,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="./favicon.ico">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/style.css?<?php echo time(); ?>">
 	<title>RicePlant Prediction</title>
 </head>
 <body>
+
+	<!-- Notice bar -->
+	<div id="notice-bar" >NOTE: STRICTLY UPLOAD RICE PLANT IMAGES ONLY!!!</div>
 	
 	<!-- Load the image and the CDN -->
 	<div id="app">
-		<main>
-
-			<!-- Header -->
-			<div>
-				<div>
-					<h4>NOTE: STRICTLY UPLOAD RICE PLANT IMAGES ONLY!!!</h4>
+		
+		<!-- Header -->
+		<div>
+			<div class="mb-2" >
+				<div id="modal-trigger">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" style="margin-right: 0.5rem;" viewBox="0 0 16 16">
+					  	<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						<path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+					</svg>
+					<span>HOW TO IDENTIFY MONTH</span>
 				</div>
-				<div>
-					<a class="mr-1" href="help.php">HOW TO IDENTIFY MONTH</a>
-				</div>
-				<h1 class="text-center" >RicePlant Harvest Prediction</h1>
-				<p>This is a simple prototype wherein you can upload a healthy rice plant picture that you wanted to know its age and whether when will it be harvested. By clicking the box and selecting the rice plant picture you want to upload, it will result into the month age of the rice plant and will show the predicted harvest period.</p>
 			</div>
+			<h1 class="text-center" >RicePlant Harvest Prediction</h1>
+			<p>This is a simple prototype wherein you can upload a healthy rice plant picture that you wanted to know its age and whether when will it be harvested. By clicking the box and selecting the rice plant picture you want to upload, it will result into the month age of the rice plant and will show the predicted harvest period.</p>
+		</div>
+
+		<main>
 
 			<!-- Main form -->
 			<form id="upload-form" >
@@ -44,7 +51,7 @@
 				<input id="picture-upload" type="file" name="rice_image" style="display: none;" >
 				<div id="permission-card" >
 					<div class="mr-1" ><input id="allow-upload" type="checkbox" name=""></div>
-					<label for="allow-upload" >By checking this box, you're allowing us to store your image, your image will be added to our dataset that will be use for improving our machine learning model.</label>
+					<label for="allow-upload" >By checking this box, you're allowing us to store your images. Your images will be added to our dataset that will be use for improving our machine learning model.</label>
 				</div>
 			</form>
 
@@ -67,13 +74,101 @@
 			</div>
 
 			<div class="text-center color-gray" >Brought to you by <span class="color-primary text-bold" >BSCS 4</span></div>
+
+			<div id="modal-triggered" >
+				<div id="modal-parent">
+					<div id="modal-container">
+						<div id="modal-trigger-button" >
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</div>
+
+						<h1 class="text-center" >HOW TO IDENTIFY MONTH</h1>
+						<div class="modal-parts" >
+							<h2>1st month to 2nd month</h2>
+							<div class="text-bold" >start of VEGETATIVE phase</div>
+							<div class="sample-parent" >
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/1st_VEGETATIVE PHASE_seedling 1.jpg">
+									<div class="text-bold" >1. seedling stage</div>
+								</div>
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/1st_VEGETATIVE PHASE_stem ellongation 1.jpg">
+									<div class="text-bold" >2. stem ellongation</div>
+								</div>
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/2nd_VEGETATIVE PHASE_tillering stage 1.jpg">
+									<div class="text-bold" >3. tillering stage</div>
+								</div>
+							</div>
+
+							<div class="text-bold" >start of REPRODUCTIVE phase</div>
+							<div class="sample-parent" >
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/3rd_REPRODUCTIVE PHASE_flowering 1.jpg">
+									<div class="text-bold" >1. Heading</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-parts" >
+							<h2>3rd month</h2>
+							<div class="sample-parent" >
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/3rd_REPRODUCTIVE PHASE_Panicle inititation 1.jpg">
+									<div class="text-bold" >2. panicle initiation</div>
+								</div>
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/3rd_REPRODUCTIVE PHASE_flowering 2.jpg">
+									<div class="text-bold" >3. flowering</div>
+								</div>
+							</div>
+							<div class="text-bold" >Start of ripening days/MATURITY phase</div>
+							<div class="sample-parent" >
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/3rd_MATURITY PHASE_milk grain stage 1.jpg">
+									<div class="text-bold" >1. milk grain stage</div>
+								</div>
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/1st_VEGETATIVE PHASE_seedling 1.jpg">
+									<div class="text-bold" >2. dough grain stage</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-parts" >
+							<h2>4th month</h2>
+							<div class="sample-parent" >
+								<div class="sample-card" >
+									<img class="sample-image" src="assets/help-cycle/4th_MATURITY PHASE_mature grain stage 1.jpg">
+									<div class="text-bold" >3. mature grain stage - 80-85% ripe<br><span class="text-bold" >Harvest time!!!</span></div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
 		</main>
 	</div>
-	
+
+	<script type="text/javascript">
+		var modal_trigger = document.querySelector("#modal-trigger");
+		var modal_trigger_button = document.querySelector("#modal-trigger-button");
+		var model_triggered = document.querySelector("#modal-triggered");
+		modal_trigger.addEventListener("click", function(){
+			model_triggered.classList.add("show");
+		});
+		modal_trigger_button.addEventListener("click", function(){
+			model_triggered.classList.remove("show");
+		});
+	</script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 	<script>
-
 		(function(){
 
 			// Configurations
@@ -232,7 +327,7 @@
 			})
 
 		})();
-		
 	</script>
+
 </body>
 </html>
