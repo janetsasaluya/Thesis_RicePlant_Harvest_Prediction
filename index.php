@@ -24,10 +24,11 @@
 					  	<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						<path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 					</svg>
-					<span>HOW TO IDENTIFY MONTH</span>
+					<span>RICE PLANT GROWTH CYCLE</span>
 				</div>
 			</div>
 			<h1 class="text-center" >RicePlant Harvest Prediction</h1>
+			<h5 class="text-center">Exclusive for TRIPLE-2 (222) Variety only</h5>
 			<p>This is a simple prototype wherein you can upload a healthy rice plant picture that you wanted to know its age and whether when will it be harvested. By clicking the box and selecting the rice plant picture you want to upload, it will result into the month age of the rice plant and will show the predicted harvest period.</p>
 		</div>
 
@@ -43,7 +44,7 @@
 					</div>
 					<div id="picture-preview-label" class="text-center" >
 						<img id="picture-preview-icon" src="assets/plant-cycle/Month-1.svg" />
-						<div class="text-bold" >UPLOAD TRIPLE 2 RICEPLANT ONLY</div>
+						<div class="text-bold" >UPLOAD TRIPLE-2 RICEPLANT ONLY</div>
 						<div></div>
 					</div>
 					<img id="picture-preview-holder" src="" />
@@ -68,8 +69,8 @@
 					<div data-month="4" class="exact-month icons" ><img style="width: 8rem;" src="assets/plant-cycle/Month-4.svg" /></div>
 				</div>
 				<div class="text-center mt-2" >
-					<p class="text-bold color-primary" >Accuracy <span id="result-accuracy" ></span>%</p>
-					<p class="color-gray" >Number of Dataset used 2000+ riceplant images</p>
+					<p class="text-bold color-primary" >Accuracy: <span id="result-accuracy" ></span>%</p>
+					<p class="color-gray" >Number of Dataset used: 2000+ riceplant images</p>
 				</div>
 			</div>
 
@@ -85,7 +86,7 @@
 							</svg>
 						</div>
 
-						<h1 class="text-center" >HOW TO IDENTIFY MONTH</h1>
+						<h1 class="text-center" >RICE PLANT GROWTH CYCLE</h1>
 						<div class="modal-parts" >
 							<h2>1st month to 2nd month</h2>
 							<div class="text-bold" >start of VEGETATIVE phase</div>

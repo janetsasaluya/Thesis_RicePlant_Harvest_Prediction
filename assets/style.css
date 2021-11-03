@@ -22,6 +22,7 @@ a:hover{ text-decoration: underline; }
 h1{ margin-bottom: 0.2rem; font-family: 'helloFarmer'; color: var(--primary-color); font-weight: normal; font-size: 6rem; }
 h2{ margin-bottom: 0.2rem; font-family: 'helloFarmer'; color: var(--primary-color); font-weight: normal; font-size: 4rem; }
 h3{ margin-bottom: 0.2rem; font-family: 'helloFarmer'; color: var(--primary-color); font-weight: normal; font-size: 3rem; }
+h5{ margin-bottom: 0.2rem; font-family: 'helloFarmer'; color: var(--primary-color); font-weight: normal; font-size: 3rem; }
 img{ height: 100%; }
 label{ font-size: inherit; }
 p{ line-height: 1.5; }
