@@ -44,7 +44,7 @@
 					</div>
 					<div id="picture-preview-label" class="text-center" >
 						<img id="picture-preview-icon" src="assets/plant-cycle/Month-1.svg" />
-						<div class="text-bold" >UPLOAD TRIPLE-2 RICEPLANT ONLY</div>
+						<div class="text-bold" >UPLOAD TRIPLE 2 RICEPLANT ONLY</div>
 						<div></div>
 					</div>
 					<img id="picture-preview-holder" src="" />
@@ -69,8 +69,8 @@
 					<div data-month="4" class="exact-month icons" ><img style="width: 8rem;" src="assets/plant-cycle/Month-4.svg" /></div>
 				</div>
 				<div class="text-center mt-2" >
-					<p class="text-bold color-primary" >Accuracy: <span id="result-accuracy" ></span>%</p>
-					<p class="color-gray" >Number of Dataset used: 2000+ riceplant images</p>
+					<p class="text-bold color-primary" >Accuracy <span id="result-accuracy" ></span>%</p>
+					<p class="color-gray" >Number of Dataset used 2000+ riceplant images</p>
 				</div>
 			</div>
 
@@ -85,70 +85,8 @@
 								<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 							</svg>
 						</div>
-
 						<h1 class="text-center" >RICE PLANT GROWTH CYCLE</h1>
-						<div class="modal-parts" >
-							<h2>1st month to 2nd month</h2>
-							<div class="text-bold" >start of VEGETATIVE phase</div>
-							<div class="sample-parent" >
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/1st_VEGETATIVE PHASE_seedling 1.jpg">
-									<div class="text-bold" >1. seedling stage</div>
-								</div>
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/1st_VEGETATIVE PHASE_stem ellongation 1.jpg">
-									<div class="text-bold" >2. stem ellongation</div>
-								</div>
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/2nd_VEGETATIVE PHASE_tillering stage 1.jpg">
-									<div class="text-bold" >3. tillering stage</div>
-								</div>
-							</div>
-
-							<div class="text-bold" >start of REPRODUCTIVE phase</div>
-							<div class="sample-parent" >
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/3rd_REPRODUCTIVE PHASE_flowering 1.jpg">
-									<div class="text-bold" >1. Heading</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="modal-parts" >
-							<h2>3rd month</h2>
-							<div class="sample-parent" >
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/3rd_REPRODUCTIVE PHASE_Panicle inititation 1.jpg">
-									<div class="text-bold" >2. panicle initiation</div>
-								</div>
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/3rd_REPRODUCTIVE PHASE_flowering 2.jpg">
-									<div class="text-bold" >3. flowering</div>
-								</div>
-							</div>
-							<div class="text-bold" >Start of ripening days/MATURITY phase</div>
-							<div class="sample-parent" >
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/3rd_MATURITY PHASE_milk grain stage 1.jpg">
-									<div class="text-bold" >1. milk grain stage</div>
-								</div>
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/1st_VEGETATIVE PHASE_seedling 1.jpg">
-									<div class="text-bold" >2. dough grain stage</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="modal-parts" >
-							<h2>4th month</h2>
-							<div class="sample-parent" >
-								<div class="sample-card" >
-									<img class="sample-image" src="assets/help-cycle/4th_MATURITY PHASE_mature grain stage 1.jpg">
-									<div class="text-bold" >3. mature grain stage - 80-85% ripe<br><span class="text-bold" >Harvest time!!!</span></div>
-								</div>
-							</div>
-						</div>
-						
+						<img loading="lazy" src="assets/help-cycle/help-flow-chart.png" style="width: 100%" >
 					</div>
 				</div>
 			</div>
